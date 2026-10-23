@@ -25,14 +25,18 @@ d3.selectAll('#tools li').style('color', 'steelblue');
 
 // 3. Add the "highlight" class to the SECOND <li> in #skills only.
 //    Hint: CSS selectors work here, e.g. 'li:nth-child(2)'.
-// TODO
+d3.select('#skills li:nth-child(2)').classed('highlight', true);
 
 
 // 4. Append a new <li> to #todo with the text "Learn data joins".
-// TODO
+d3.select('#todo').append('li').text('Learn data joins');
+
 
 
 // 5. When #toggle-button is clicked, toggle "highlight" on every <li> in #toggle-list.
 //    Hint: .classed('highlight', function () { return !d3.select(this).classed('highlight'); })
 //    Simpler hint: keep a variable `on` that flips between true and false.
-// TODO
+d3.select('#toggle-button').on('click', function () {
+  d3.selectAll('#toggle-list li').classed('highlight', function () {
+    return !d3.select(this).classed('highlight');
+  });
