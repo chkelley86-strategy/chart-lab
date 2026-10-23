@@ -22,7 +22,7 @@ import * as d3 from 'd3';
 const chartTypes = ['Bar', 'Line', 'Area', 'Scatter', 'Donut'];
 
 // TODO: create one <li> per chart type inside #chart-types, with the name as text.
-
+d3.select('#chart-types').selectAll('li').data(chartTypes).join('li').text(d => d);
 
 // ---------------------------------------------------------------------------
 // 2. Data drives size
