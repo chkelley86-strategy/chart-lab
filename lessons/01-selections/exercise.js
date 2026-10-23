@@ -40,3 +40,4 @@ d3.select('#toggle-button').on('click', function () {
   d3.selectAll('#toggle-list li').classed('highlight', function () {
     return !d3.select(this).classed('highlight');
   });
+});
