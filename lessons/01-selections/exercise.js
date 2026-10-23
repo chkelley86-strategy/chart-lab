@@ -17,8 +17,7 @@
 import * as d3 from 'd3';
 
 // 1. Change the text of #greeting to "Hello, d3."
-// TODO
-
+d3.select('#greeting').text('Hello, d3.');
 
 // 2. Make every <li> in #tools the color steelblue.
 d3.selectAll('#tools li').style('color', 'steelblue');
