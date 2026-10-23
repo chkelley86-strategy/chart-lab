@@ -21,7 +21,7 @@ import * as d3 from 'd3';
 
 
 // 2. Make every <li> in #tools the color steelblue.
-// TODO
+d3.selectAll('#tools li').style('color', 'steelblue');
 
 
 // 3. Add the "highlight" class to the SECOND <li> in #skills only.
