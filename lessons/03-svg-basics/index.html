@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 · SVG basics</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      svg { display: block; border: 1px dashed var(--color-border); border-radius: 4px; max-width: 100%; }
+    </style>
+  </head>
+  <body>
+    <div class="nav"><a href="../../">← All lessons</a><a href="./solution.html">See solution</a></div>
+    <h1>03 · SVG basics</h1>
+    <p class="lead">
+      Charts are drawn in SVG: shapes placed on an x/y grid. The top-left corner is (0, 0), and y gets
+      <em>bigger</em> as you go <em>down</em>. Open <code>exercise.js</code>.
+    </p>
+
+    <div class="exercise">
+      <h3>1. Draw shapes</h3>
+      <p class="hint">Use d3 to append a rectangle, a circle, a line and some text to the SVG below (400 × 200).</p>
+      <svg id="shapes" width="400" height="200"></svg>
+    </div>
+
+    <div class="exercise">
+      <h3>2. Groups and margins</h3>
+      <p class="hint">Add a <code>g</code> shifted in by a margin, so everything inside starts at the margin, not the edge.</p>
+      <svg id="margins" width="400" height="200"></svg>
+    </div>
+
+    <div class="exercise">
+      <h3>3. Your first bar chart, by hand</h3>
+      <p class="hint">Combine data joins and SVG to draw one bar per month. Every number is calculated by hand for now; week 2 replaces them with scales.</p>
+      <svg id="bar-chart" width="480" height="260"></svg>
+    </div>
+
+    <script type="module" src="./exercise.js"></script>
+  </body>
+</html>

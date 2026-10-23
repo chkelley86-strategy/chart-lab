@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 · Selections</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <div class="nav"><a href="../../">← All lessons</a><a href="./solution.html">See solution</a></div>
+    <h1>01 · Selections</h1>
+    <p class="lead">
+      d3 starts by <em>selecting</em> elements, then changing them. Open <code>exercise.js</code> and work through each TODO.
+      The page reloads every time you save.
+    </p>
+
+    <div class="exercise">
+      <h3>1. Change text</h3>
+      <p class="hint">Select <code>#greeting</code> and change its text.</p>
+      <p id="greeting">Hello, hello.</p>
+    </div>
+
+    <div class="exercise">
+      <h3>2. Style many elements at once</h3>
+      <p class="hint">Select every <code>li</code> inside <code>#tools</code> and give them all a new color.</p>
+      <ul id="tools">
+        <li>Figma</li>
+        <li>VS Code</li>
+        <li>GitHub</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <h3>3. Add and remove classes</h3>
+      <p class="hint">Add the <code>highlight</code> class to the second item only.</p>
+      <ul id="skills">
+        <li>Design systems</li>
+        <li>Data visualization</li>
+        <li>Strategy</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <h3>4. Append new elements</h3>
+      <p class="hint">Append a new <code>li</code> to <code>#todo</code> that says "Learn data joins".</p>
+      <ul id="todo">
+        <li>Learn selections</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <h3>5. Respond to clicks</h3>
+      <p class="hint">When the button is clicked, toggle the <code>highlight</code> class on every item in <code>#toggle-list</code>.</p>
+      <button id="toggle-button">Toggle highlight</button>
+      <ul id="toggle-list">
+        <li>Bar</li>
+        <li>Line</li>
+        <li>Area</li>
+      </ul>
+    </div>
+
+    <script type="module" src="./exercise.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 · Data joins (solution)</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .bar-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 14px; }
+      .bar-row .label { width: 90px; color: var(--color-text-quiet); }
+      .bar-row .bar { height: 20px; background: var(--color-accent); border-radius: 3px; }
+      #live-list li { transition: background 0.3s; }
+      .entering { background: #dff3e4; }
+    </style>
+  </head>
+  <body>
+    <div class="nav"><a href="../../">← All lessons</a><a href="./">Back to exercise</a></div>
+    <h1>02 · Data joins <small>(solution)</small></h1>
+    <p class="lead">
+      The data join is the heart of d3: you give it an array, and it creates, updates and removes elements so the page
+      always matches the data. Open <code>exercise.js</code>.
+    </p>
+
+    <div class="exercise">
+      <h3>1. One element per data item</h3>
+      <p class="hint">Turn the <code>chartTypes</code> array into one <code>li</code> per item inside <code>#chart-types</code>.</p>
+      <ul id="chart-types"></ul>
+    </div>
+
+    <div class="exercise">
+      <h3>2. Data drives size</h3>
+      <p class="hint">Make one row per item in <code>signups</code>, with a bar whose width comes from <code>value</code>.</p>
+      <div id="html-bars"></div>
+    </div>
+
+    <div class="exercise">
+      <h3>3. Keep the page in sync as data changes</h3>
+      <p class="hint">Write a <code>render()</code> function and call it whenever the buttons change the data.</p>
+      <button id="add">Add item</button>
+      <button id="remove">Remove first</button>
+      <button id="shuffle">Shuffle</button>
+      <ul id="live-list"></ul>
+    </div>
+
+    <script type="module" src="./solution.js"></script>
+  </body>
+</html>
