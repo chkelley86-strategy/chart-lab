@@ -78,6 +78,15 @@ function render() {
   //     update => update.classed('entering', false),
   //     exit => exit.remove()
   //   )
+  d3.select('#live-list')
+    .selectAll('li')
+    .data(items, d => d.id)
+    .join(
+      enter => enter.append('li').classed('entering', true),
+      update => update.classed('entering', false),
+      exit => exit.remove()
+    )
+    .text(d => d.name); // join() also reorders the elements to match the array, so Shuffle works
 }
 
 d3.select('#add').on('click', () => {
