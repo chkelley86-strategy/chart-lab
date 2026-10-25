@@ -42,14 +42,7 @@ const signups = [
 // Hint: after .join('div'), use .attr('class', 'bar-row'), then
 //       row.append('span')... and row.append('div')... on the same selection.
 //       Save the joined selection in a const so you can append to it twice.
-d3.select('#html-bars')
-  .selectAll('div')
-  .data(signups)
-  .join('div')              // ← now pointing at the 5 rows
-  .attr('class', 'bar-row')
-  .append('span')           // ← now pointing at the 5 spans, not the rows
-  .attr('class', 'label')
-  .text(d => d.month);
+
 
 const rows = d3.select('#html-bars')
   .selectAll('div')
