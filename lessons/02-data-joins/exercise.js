@@ -46,10 +46,15 @@ d3.select('#html-bars')
   .selectAll('div')
   .data(signups)
   .join('div')
-  .attr('class', 'bar-row')
-  .append('span')
+  .attr('class', 'bar-row');
+
+rows.append('span')
   .attr('class', 'label')
   .text(d => d.month);
+
+rows.append('div')
+  .attr('class', 'bar')
+  .style('width', d => `${d.value * 5}px`);
 
 // ---------------------------------------------------------------------------
 // 3. Keep the page in sync as data changes
