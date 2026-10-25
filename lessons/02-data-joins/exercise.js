@@ -47,6 +47,9 @@ d3.select('#html-bars')
   .data(signups)
   .join('div')
   .attr('class', 'bar-row');
+  .append('span')           // ← now pointing at the 5 spans, not the rows
+  .attr('class', 'label')
+  .text(d => d.month);
 
 rows.append('span')
   .attr('class', 'label')
