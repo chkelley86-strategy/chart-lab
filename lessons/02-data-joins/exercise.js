@@ -45,11 +45,17 @@ const signups = [
 d3.select('#html-bars')
   .selectAll('div')
   .data(signups)
-  .join('div')
-  .attr('class', 'bar-row');
+  .join('div')              // ← now pointing at the 5 rows
+  .attr('class', 'bar-row')
   .append('span')           // ← now pointing at the 5 spans, not the rows
   .attr('class', 'label')
   .text(d => d.month);
+
+const rows = d3.select('#html-bars')
+  .selectAll('div')
+  .data(signups)
+  .join('div')
+  .attr('class', 'bar-row');
 
 rows.append('span')
   .attr('class', 'label')
