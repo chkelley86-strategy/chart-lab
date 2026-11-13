@@ -104,10 +104,43 @@ const chart = d3.select('#bar-chart')
 //   height = d.value * pxPerSignup
 //   y      = innerHeight - height     ← bars grow UP from the bottom, so y starts high
 //   fill   = 'steelblue'
+chart.selectAll('rect')
+  .data(signups)
+  .join('rect')
+  .attr('x', (d, i) => i * (barWidth + barGap))
+  .attr('y', d => innerHeight - d.value * pxPerSignup)
+  .attr('width', barWidth)
+  .attr('height', d => d.value * pxPerSignup)
+  .attr('fill', 'steelblue');
+  
+
 
 // TODO: join `signups` to <text> elements for the month labels under each bar:
 //   x = i * (barWidth + barGap) + barWidth / 2, y = innerHeight + 20, text-anchor 'middle'
 //   Hint: selectAll('text.month') and .attr('class', 'month') keep these separate from the value labels.
+chart.selectAll('text.month')
+  .data(signups)
+  .join('text')
+  .attr('class', 'month')
+  .attr('x', (d, i) => i * (barWidth + barGap) + barWidth / 2)
+  .attr('y', innerHeight + 20)
+  .attr('text-anchor', 'middle')
+  .text(d => d.month);
 
 // Stretch: add the value above each bar, and a baseline <line> along the bottom.
+chart.selectAll('text.value')
+  .data(signups)
+  .join('text')
+  .attr('class', 'value')
+  .attr('x', (d, i) => i * (barWidth + barGap) + barWidth / 2)
+  .attr('y', d => innerHeight - d.value * pxPerSignup - 5)
+  .attr('text-anchor', 'middle')
+  .text(d => d.value);
+
+chart.append('line')
+  .attr('x1', 0)
+  .attr('y1', innerHeight)
+  .attr('x2', innerWidth)
+  .attr('y2', innerHeight)
+  .attr('stroke', 'black');
 // Reflect: which numbers here would break if the data changed? Scales (week 2) fix exactly that.
