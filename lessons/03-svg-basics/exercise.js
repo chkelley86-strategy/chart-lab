@@ -62,6 +62,16 @@ const marginsSvg = d3.select('#margins');
 //       height = 200 - margin.top - margin.bottom
 //       Give it fill 'none' and a stroke so you can see the "plot area".
 // Notice: (0, 0) inside the group is now 40px in and 20px down.
+const plotArea = marginsSvg.append('g')
+  .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+plotArea.append('rect')
+  .attr('x', 0)
+  .attr('y', 0)
+  .attr('width', 400 - margin.left - margin.right)
+  .attr('height', 200 - margin.top - margin.bottom)
+  .attr('fill', 'none')
+  .attr('stroke', 'black');
 
 
 // ---------------------------------------------------------------------------
